@@ -1,78 +1,160 @@
-/* Réinitialisation basique */
-* {
-    box-sizing: border-box;
+/* 
+   ===============================
+   =        Fond animé           =
+   ===============================
+   Inspiré d'un dégradé infini
+*/
+body {
     margin: 0;
     padding: 0;
-  }
-  
-  body {
     font-family: sans-serif;
-    background: #f5f5f5;
-    color: #333;
-    padding: 20px;
+    /* Le background est un dégradé qui se déplace grâce à l'animation */
+    background: linear-gradient(-45deg, #ff6f91, #ff9671, #ffc75f, #f9f871);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
   }
   
+  /* Animation pour le fond (changement de position du dégradé) */
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* 
+     ===============================
+     =      Titre principal        =
+     ===============================
+  */
   h1 {
-    margin-bottom: 20px;
+    text-align: center;
+    margin: 30px 0 20px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   }
   
-  /* Conteneur principal des onglets */
+  /* 
+     ===============================
+     =     Conteneur des onglets   =
+     ===============================
+  */
   .tabs {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
+    padding: 0 20px;
   }
   
-  /* Les boutons radio sont masqués, c'est leur état "checked" qui contrôle l'affichage des contenus */
+  /* 
+     ===============================
+     =   Inputs pour gérer l'état  =
+     ===============================
+  */
   input[type="radio"] {
-    display: none;
+    display: none; /* Cachés pour ne laisser visibles que les labels */
   }
   
-  /* Styles communs aux étiquettes (qui servent d'onglets visuels) */
+  /* 
+     ===============================
+     =   Labels (onglets) visuels  =
+     ===============================
+  */
   .tab-label {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 25px;
     cursor: pointer;
-    background: #ddd;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px 8px 0 0;
+    backdrop-filter: blur(5px);
+    color: #fff;
     margin-right: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
   }
   
-  /* Changement de couleur de l’onglet lorsqu’il est sélectionné */
+  .tab-label:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  /*
+    Quand l’onglet est sélectionné (radio checked),
+    on rend le label plus prononcé.
+  */
   input[type="radio"]:checked + .tab-label {
     background: #fff;
-    border-bottom: 1px solid #fff; /* Évite une bordure sur le bas de l’onglet actif */
+    color: #333;
+    border-bottom: 2px solid #fff;
+    text-shadow: none;
   }
   
-  /* Le contenu est masqué par défaut */
+  /* 
+     ===============================
+     =   Contenu des onglets       =
+     ===============================
+  */
   .tab-content {
-    display: none;
+    display: none; /* Masqué par défaut */
     padding: 20px;
     background: #fff;
-    border: 1px solid #ddd;
-    border-top: 0;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 0 8px 8px 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    margin-top: -1px; 
   }
   
-  /* Lorsque l’onglet est coché (checked), on affiche le contenu correspondant */
+  /* 
+     Quand l'input (onglet) est coché,
+     le contenu correspondant apparait 
+  */
   #tab-doc:checked ~ .content-doc,
   #tab-team:checked ~ .content-team {
     display: block;
   }
   
-  /* Style pour le lien de téléchargement (apparence d'un bouton) */
+  /* 
+     ===============================
+     =   Style du lien (bouton)    =
+     ===============================
+  */
   .tab-content a {
     display: inline-block;
     margin-top: 10px;
-    padding: 10px 20px;
-    background: #2196F3; /* Couleur du bouton */
-    color: #fff;         /* Couleur du texte */
+    padding: 12px 25px;
+    background: #2196F3;
+    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.2s;
   }
   
   .tab-content a:hover {
-    background: #0b7dda; /* Couleur au survol */
+    background: #0b7dda;
   }
   
+  /* 
+     ===============================
+     =   Style du texte, titres    =
+     ===============================
+  */
+  .tab-content h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .tab-content p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .tab-content ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    line-height: 1.6;
+  }
+s  
