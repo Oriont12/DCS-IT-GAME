@@ -61,3 +61,18 @@
     display: block;
   }
   
+  /* Style pour le lien de téléchargement (apparence d'un bouton) */
+  .tab-content a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #2196F3; /* Couleur du bouton */
+    color: #fff;         /* Couleur du texte */
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .tab-content a:hover {
+    background: #0b7dda; /* Couleur au survol */
+  }
+  
