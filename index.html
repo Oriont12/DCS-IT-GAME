@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Documentation et Présentation d'équipe</title>
+  <!-- Lien vers la feuille de style externe -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Documentation et Présentation d'équipe</h1>
+
+  <div class="tabs">
+    <!--
+      1) Chaque input[type="radio"] représente un onglet.
+      2) Le label qui suit l'input est visuellement l'onglet cliquable.
+      3) L'ID de l'input (ex: 'tab-doc') correspond à l'attribut 'for' du label.
+    -->
+    <input type="radio" name="tabs" id="tab-doc" checked>
+    <label class="tab-label" for="tab-doc">Documentation</label>
+
+    <input type="radio" name="tabs" id="tab-team">
+    <label class="tab-label" for="tab-team">Présentation d'équipe</label>
+
+    <!-- Contenu de l’onglet Documentation -->
+    <div class="tab-content content-doc">
+      <h2>Documentation</h2>
+      <p>
+        Bienvenue dans notre documentation. Vous trouverez ici toutes les informations 
+        nécessaires pour configurer, installer et utiliser notre projet.
+      </p>
+      <p>
+        <strong>Installation :</strong> Téléchargez le projet, ouvrez un terminal et exécutez 
+        <code>npm install</code> pour installer les dépendances.
+      </p>
+      <p>
+        <strong>Utilisation :</strong> Lancez <code>npm start</code> pour démarrer l’application 
+        en mode développement.
+      </p>
+    </div>
+
+    <!-- Contenu de l’onglet Présentation d'équipe -->
+    <div class="tab-content content-team">
+      <h2>Présentation de l’équipe</h2>
+      <p>
+        Notre équipe est composée de passionnés qui œuvrent ensemble pour réaliser ce projet.
+        Voici un bref aperçu des membres :
+      </p>
+      <ul>
+        <li><strong>Alice</strong> – Cheffe de projet</li>
+        <li><strong>Bob</strong> – Développeur Front-end</li>
+        <li><strong>Claire</strong> – Développeuse Back-end</li>
+        <li><strong>David</strong> – Designer UX/UI</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

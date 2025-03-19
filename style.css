@@ -1,0 +1,63 @@
+/* Réinitialisation basique */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  /* Conteneur principal des onglets */
+  .tabs {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Les boutons radio sont masqués, c'est leur état "checked" qui contrôle l'affichage des contenus */
+  input[type="radio"] {
+    display: none;
+  }
+  
+  /* Styles communs aux étiquettes (qui servent d'onglets visuels) */
+  .tab-label {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #ddd;
+    margin-right: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  /* Changement de couleur de l’onglet lorsqu’il est sélectionné */
+  input[type="radio"]:checked + .tab-label {
+    background: #fff;
+    border-bottom: 1px solid #fff; /* Évite une bordure sur le bas de l’onglet actif */
+  }
+  
+  /* Le contenu est masqué par défaut */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  /* Lorsque l’onglet est coché (checked), on affiche le contenu correspondant */
+  #tab-doc:checked ~ .content-doc,
+  #tab-team:checked ~ .content-team {
+    display: block;
+  }
+  
